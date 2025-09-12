@@ -27,22 +27,8 @@ private:
 
 	
 	int _screenWidth{ 0 };		//Screen Width
-	int _screenHieght{ 0 };		//Screen Height
+	int _screenHeight{ 0 };		//Screen Height
 	bool is_running{ true };	// Toggle state
-
-
-
-	//Vectorfor horizonta Tabs
-
-	std::vector<std::string> _tabNames{"Main", "Setting", "About"};
-	std::vector<std::string> _tab1Values{ "Forest", "Water", "I don't know", };
-
-
-
-	int _tabSelected	{ 0 }; 
-	int _tabSelteced1	{ 0 };
-	int _tabSelteced2	{ 0 };
-	int _tabSelteced3	{ 0 };
 };
 
 

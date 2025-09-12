@@ -15,7 +15,7 @@
 #include <cmath>    
 #include <cstdlib>  
 #include <algorithm> 
-#include <corecrt_math_defines.h>
+//#include <corecrt_math_defines.h>
 #include "MouseInterpolates.h"
 
 class MouseController

@@ -46,17 +46,17 @@ int UserInterface::DrawUI() {
 }
 
 
-//Might need to move this to another file not sure if it make sense here
+//Might need to move this to another file not sure if it makes sense here
 void UserInterface::StartMovingMouse() {
 
 	_screenWidth = GetSystemMetrics(SM_CXSCREEN);
-	_screenHieght = GetSystemMetrics(SM_CYSCREEN);
+	_screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
 	std::thread([this] {
 		while (is_running) {
 			MouseController _mouseController; // Getting a reference to the class here
-			_mouseController.MoveMouse(_screenWidth, _screenHieght);
-			Sleep(18000); // Sleep for 30 second before moving the mouse again
+			_mouseController.MoveMouse(_screenWidth, _screenHeight);
+			Sleep(18000); // Sleep for 30 seconds before moving the mouse again
 	}
 	}).detach();
 }
