@@ -27,7 +27,7 @@ private:
 
 	
 	int _screenWidth{ 0 };		//Screen Width
-	int _screenHieght{ 0 };		//Screen Hight
+	int _screenHieght{ 0 };		//Screen Height
 	bool is_running{ true };	// Toggle state
 
 
