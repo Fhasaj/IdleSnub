@@ -68,4 +68,4 @@ cmake --build build
 
 ## 📝 License
 
-IdleSnub is released under the [MIT License](../LICENSE).
+IdleSnub is released under the [MIT License](./LICENSE).
