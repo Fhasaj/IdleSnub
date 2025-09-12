@@ -6,6 +6,7 @@ int UserInterface::DrawUI() {
 
 	auto screen = ftxui::ScreenInteractive::TerminalOutput();
 
+    //TODO: Add to the userinterface.h file
 	std::string button_label = "Start";	// Button label
 
 	// Function to be toggled
