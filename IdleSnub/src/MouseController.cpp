@@ -1,30 +1,24 @@
 ﻿#include "../headers/MouseController.h"
 
 
+MouseController::MouseController() {srand(static_cast<unsigned>(time(nullptr)));}
 
-MouseController::MouseController()
-{
-    srand(static_cast<unsigned>(time(nullptr)));
-}
-
-void MouseController::MoveMouse(int& scrennWidth, int& screenHight)
-{
+void MouseController::MoveMouse(int &scrennWidth, int &screenHight) {
     this->scrennWidth = scrennWidth;
     this->screenHight = screenHight;
 
     // Get a random mouse position on the screen
-    RandomPoint pos =  GetRandomMousePosition();
-    _randomScreenWidth = pos.x; //width
-    _randomScreenHight = pos.y; //Highet
+    RandomPoint pos = GetRandomMousePosition();
+    _randomScreenWidth = pos.x; // width
+    _randomScreenHight = pos.y; // Highet
 
     // Move the mouse to the random position
     MouseMove(_randomScreenWidth, _randomScreenHight);
 }
 
-
 /*
  * Function that takes in the screen width and height and returns the random value.
- * It requiers a pointer to the x and y value of the screen.
+ * It requires a pointer to the x and y value of the screen.
  */
 MouseController::RandomPoint MouseController::GetRandomMousePosition()
 {
@@ -67,14 +61,15 @@ void MouseController::MouseMove(const int& targetX, const int& targetY)
         // Ease-in/ease-out timing
         const double easeT = 0.5 - 0.5 * cos(t * M_PI);
 
-
         POINT pos = _MouseInterpolates.BezierInterpolate(currentMousePos, control, target, easeT);
 
         // Add small random jitter to simulate hand tremor
         SetCursorPos(pos.x + g_jitter(g_gen), pos.y + g_jitter(g_gen));
 
         // Variable sleep for more realism
+
         Sleep(3 + rand() % 4);
+
     }
 
     SetCursorPos(targetX, targetY);

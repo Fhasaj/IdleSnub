@@ -6,7 +6,13 @@
 #include <ftxui/component/component_options.hpp>
 #include <ftxui/component/component_base.hpp>
 #include <ftxui/component/screen_interactive.hpp>
+#include <ftxui/component/event.hpp>  // for Event
 #include <iostream>
+#include <memory>                  // for allocator, shared_ptr
+#include <string>                  // for operator+, to_string
+#include <thread>                  // for sleep_for
+#include <chrono>                     // for milliseconds
+
 
 #include"MouseController.h"
 
@@ -15,9 +21,6 @@ class UserInterface
 public:
 	UserInterface();
 	~UserInterface() = default;
-
-	//void UiInit();
-
 private:
 
 	int DrawUI();
@@ -26,9 +29,17 @@ private:
 
 
 	
-	int _screenWidth{ 0 };		//Screen Width
-	int _screenHeight{ 0 };		//Screen Height
-	bool is_running{ true };	// Toggle state
+	int _screenWidth{ 0 };		            //Screen Width
+	int _screenHeight{ 0 };		            //Screen Height
+    int _startTimer{ 30 };                  //Used to sleep the program
+
+	bool is_running{ true };	            // Toggle state of buton
+    bool _mouseStarted {false};             // Toggle when the program is started
+
+
+    std::string button_label = "Start";	    // Button label
+    std::thread _timer_thread;              //
+
 };
 
 

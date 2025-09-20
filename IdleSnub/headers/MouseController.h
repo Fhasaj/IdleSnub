@@ -8,11 +8,13 @@
 * @moddified: 29/07/2025 - 
 */
 
+#define _USE_MATH_DEFINES
 
 #include <Windows.h>
 #include <stdio.h>
 #include <random>
-#include <cmath>    
+#include <cmath>
+#include <numbers>
 #include <cstdlib>  
 #include <algorithm> 
 //#include <corecrt_math_defines.h>
@@ -25,7 +27,9 @@ public:
 	~MouseController() = default;
 
 	//EntryPoint
-	void MoveMouse(int& scrennWidth, int& screenHight); 
+	void MoveMouse(int &scrennWidth, int &screenHight);
+
+    int GetPauseTimer();
 
 private:
 
@@ -37,9 +41,6 @@ private:
 
 	RandomPoint GetRandomMousePosition();
 	static void MouseMove(const int& targetX, const int& targetY);
-
-
-
 
 	int _randomScreenWidth, _randomScreenHight; 
 	int scrennWidth; 
